@@ -126,7 +126,7 @@ class productController extends Controller
                 'name' => $req->name,
                 'code' => $req->code,
                 'price' => 0,
-                'pprice' => 0,
+                'pprice' => $req->pprice,
                 'category' => $req->category,
                 'brand' => $req->brand,
                 'alert' => $req->alert,
@@ -158,6 +158,7 @@ class productController extends Controller
                 'code' => $req->code,
                 'category' => $req->category,
                 'pic' => $image_path1,
+                'pprice' => $req->pprice,
                 'brand' => $req->brand,
                 'alert' => $req->alert,
             ]
@@ -171,6 +172,7 @@ class productController extends Controller
                     'code' => $req->code,
                     'category' => $req->category,
                     'brand' => $req->brand,
+                    'pprice' => $req->pprice,
                     'alert' => $req->alert,
                 ]
             );

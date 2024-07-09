@@ -47,6 +47,7 @@ App::setLocale(auth()->user()->lang);
                                 <th class="border-top-0">Category</th>
                                 <th class="border-top-0">Brand</th>
                                 <th class="border-top-0">Stock</th>
+                                <th class="border-top-0">Purchase Price</th>
                                 <th class="border-top-0">Price</th>
                                 <th class="border-top-0">Alert</th>
                                 <th>{{ __('lang.Action') }}</th>
@@ -75,6 +76,7 @@ App::setLocale(auth()->user()->lang);
                                 <td>{{ $pro->category }}</td>
                                 <td>{{ $pro->brand }}</td>
                                 <td>{{ $pro->stock }}</td>
+                                <td>{{ $pro->pprice }}</td>
                                 <td>{{ $pro->price }}</td>
                                 <td>{{ $pro->alert }}</td>
                                 <td>
@@ -146,6 +148,12 @@ App::setLocale(auth()->user()->lang);
                             <div class="form-group">
                                 <label for="alert">Alert Qty</label>
                                 <input type="number" required id="edit_alert" name="alert" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="pprice">Purchase Price</label>
+                                <input type="number" required id="edit_pprice" step="any" name="pprice" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -222,6 +230,12 @@ App::setLocale(auth()->user()->lang);
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="pprice">Purchase Price</label>
+                                <input type="number" required value="0" step="any" name="pprice" id="pprice" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="image">Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
@@ -266,6 +280,7 @@ App::setLocale(auth()->user()->lang);
                 $('#edit_category').val(abc.pro['category']);
                 $('#edit_brand').val(abc.pro['brand']);
                 $('#edit_alert').val(abc.pro['alert']);
+                $('#edit_pprice').val(abc.pro['pprice']);
                 $('#edit_id').val(abc.pro['id']);
                 $('#edit').modal('show');
             }
